@@ -17,15 +17,21 @@ function App() {
       text: texto,
       completed: false
     }
-
   setTodos([...todos, nuevaTarea]);
+  }
+
+    const eliminarTarea = (id) => {
+
+    const nuevasTareas = todos.filter(tarea => tarea.id !== id)
+    setTodos(nuevasTareas)
+
   }
 
   return (
     <>
       <h1 className='tl-header'>TodoList</h1>
       <TodoForm onAdd={agregarTarea}/>
-      <TodoList todos={todos}/>
+      <TodoList todos={todos} onDelete={eliminarTarea}/>
     </>
   )
 }

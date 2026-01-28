@@ -1,10 +1,13 @@
 
-export const TodoItem = ({ tarea }) => {
+export const TodoItem = ({ tarea, onDelete }) => {
 
     return(
     <li>
         <span>{tarea.text}</span>
-        <button>Eliminar</button>
+        <input type="checkbox" />
+        <button onClick={() => onDelete(tarea.id)}>
+            Eliminar
+        </button>
     </li>
     )
 }
