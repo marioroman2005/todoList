@@ -1,6 +1,6 @@
 import { TodoItem } from "./TodoItem"
 
-export const TodoList = ({todos, onDelete }) => {
+export const TodoList = ({todos, onDelete, onToggle }) => {
 
     return (
         <ul>
@@ -9,6 +9,7 @@ export const TodoList = ({todos, onDelete }) => {
                     key={tarea.id} 
                     tarea={tarea}
                     onDelete={onDelete} //Le pasamos la prop al hijo
+                    onToggle={onToggle}
                 />
             ))}
         </ul>
